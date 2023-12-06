@@ -1,0 +1,234 @@
+
+Kintamieji Python programavimo kalboje yra duomenų saugojimo vieta.
+Kintamiesiems priskiriami įvairūs duomenų tipai, tokie kaip skaičiai,
+eilutės, sąrašai ir kiti objektai. Kintamieji Python kalboje yra
+dinamiški, tai reiškia, kad jų duomenų tipas nustatomas
+priskiriant reikšmę.
+
+
+if sąlyga Python kalboje naudojama vykdyti kodą tik tada, kai nurodyta sąlyga yra teisinga (True). Jei sąlyga yra neteisinga (False), kodas nebus vykdomas.
+elif leidžia patikrinti papildomas sąlygas, jei pirmoji if sąlyga nėra teisinga, o else blokas leidžia nurodyti kodą, kuris bus vykdomas, jei visos sąlygos neteisingos.
+
+
+for ciklas Python kalboje naudojamas kartoti kodą kelis kartus. Paprastai for
+ciklas naudojamas kartu su sąrašais (lists), arba kitomis sekų
+(sequence) tipų struktūromis, tokiais kaip eilutės, sąrašai, žodynai,
+rinkiniai.
+
+
+Python kalboje sąrašas (angl. list) yra duomenų struktūra, leidžianti
+saugoti įvairių tipų duomenis kaip vieną seką. Sąrašai yra keičiami
+(mutable), tai reiškia, kad galima keisti, pridėti arba ištrinti
+elementus sąraše po jo sukūrimo.
+Sąrašai yra viena iš labiausiai naudojamų duomenų struktūrų Python programavimo kalboje dėl jų lankstumo ir paprastumo.
+
+
+Sąrašo Sukūrimas: Sąrašą sukurti galima su skliausteliais [], į juos įtraukiant elementus atskirtus kableliais.
+Elementų Prieiga: Prie sąrašo elementų galima prieiti naudojant indeksus, prasidedančius nuo nulio (0).
+Elementų Pridėjimas: Į sąrašo pabaigą galima pridėti naujus elementus naudojant append() metodą.
+Elementų Įterpimas: Naujus elementus galima įterpti bet kurioje sąrašo vietoje naudojant insert() metodą.
+Elementų Ištrynimas: Elementus iš sąrašo galima ištrinti naudojant del komandą arba remove() metodą.
+Sąrašo Ilgis: Sąrašo ilgį galima sužinoti naudojant len() funkciją.
+Sąrašo Elementų Iteravimas: Per sąrašo elementus galima iteruoti naudojant for ciklą.
+
+Žodynai Python kalboje yra naudojami saugoti duomenis raktų ir reikšmių
+poromis. Žodynas leidžia lengvai prieiti prie duomenų naudojant raktus, o
+ne indeksus kaip sąrašuose.
+
+mano_zodynas = {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
+
+
+
+Taip pat galite pridėti, keisti ar ištrinti poras žodyne:
+
+mano_zodynas['raktas3'] = 'reiksme3'  # Pridėti naują porą
+mano_zodynas['raktas1'] = 'nauja reiksme'  # Keisti esamą porą
+del mano_zodynas['raktas2']  # Ištrinti porą
+
+
+while ciklas Python kalboje leidžia kartoti kodą tol, kol
+nurodyta sąlyga yra teisinga. Tai yra naudinga, kai nežinote, kiek kartų
+reikės kartoti kodą.
+
+
+
+Funkcijos Python kalboje yra būdas grupuoti kodą, kuris atlieka tam tikrą užduotį. Tai leidžia kodą pernaudoti ir padaro programas lengviau skaitomas bei tvarkomas.
+Funkciją apibrėžiate naudodami def raktinį žodį, po kurio seka funkcijos pavadinimas ir skliaustuose argumentų sąrašas.
+
+def mano_funkcija(argumentas1, argumentas2):
+    # Kodo blokas
+    rezultatas = argumentas1 + argumentas2
+    return rezultatas
+
+
+
+
+BeautifulSoup yra Python biblioteka, skirta interneto
+puslapių turinio nuskaitymui ir analizei, dažnai naudojama web scraping
+projektuose. Ji leidžia lengvai rasti ir išgauti informaciją iš HTML ar
+XML dokumentų.
+
+
+
+
+Pirmiausia reikia importuoti biblioteką ir sukurti BeautifulSoup objektą, paduodant HTML turinį kaip eilutę ir nurodant analizatoriaus tip:
+from bs4 import BeautifulSoup
+
+html_dokumentas = "<html> ... </html>"
+soup = BeautifulSoup(html_dokumentas, 'html.parser')
+
+
+- randa pirmąjį elementą, atitinkantį nurodytą tag'ą arba klasę:
+elementas = soup.find('div', class_='klases_pavadinimas')
+
+
+arba - randa visus elementus, atitinkančius nurodytą tag'ą arba klasę:
+visi_elementai = soup.find_all('a', class_='nuorodos_klase')
+
+.text - grąžina visą tekstą iš rasto HTML elemento:
+tekstas = elementas.text
+
+- funkcija, kuri taip pat grąžina tekstą iš elemento, su galimybe nustatyti papildomus parametrus:
+tekstas = elementas.get_text(strip=True)  # Išvalo tarpus ir naujas eilutes
+
+
+- grąžina nurodyto atributo reikšmę:
+nuoroda = elementas['href']
+
+
+split() funkcija yra naudojama norint padalinti tekstą į
+sąrašą pagal nurodytą skyriklį (separatorių). Jei skyriklio nenurodoma,
+pagal nutylėjimą naudojami (tarpas,nauja eilutė).
+
+
+strip() funkcija naudojama pašalinti nereikalingus simbolius iš teksto pradžių ir pabaigos. Pagal nutylėjimą strip()
+pašalina visus baltos erdvės simbolius (tarpus, naujas
+eilutes). Taip pat galite nurodyti simbolius, kuriuos norite pašalinti.
+
+Objektinio programavimo paradigma (OOP) yra plačiai naudojamas
+programavimo modelis, kuris padeda struktūrizuoti ir organizuoti
+programinį kodą.
+
+Klasės ir Objektai: Klasė yra apibrėžimas, kuris nurodo objekto savybes ir elgseną. Objektas yra konkretus klasės apibrėžimas. Pvz., jeigu klasė yra "Automobilis", tai konkretus automobilis ("Toyota Corolla") būtų objektas.
+
+Konstruktorius (__init__ metodas): Tai yra speciali klasės funkcija, kuri iškviečiama, kai yra sukuriamas naujas klasės objektas. Ji naudojama nustatyti pradines objekto savybes.
+
+Savybės (atributai): Tai yra kintamieji, kurie saugo objekto būsenos duomenis.
+
+Metodai: Metodai yra funkcijos, aprašytos klasėje, kurios nurodo objekto elgseną. Jie gali keisti objekto būseną arba atlikti veiksmus, susijusius su objekto savybėmis.
+
+Paveldėjimas: Tai OOP principas, leidžiantis naujai klasėi perimti savybes ir metodus iš kitos klasės. Tai padeda išvengti kodo kartojimo ir padaro programą lengviau palaikomą.
+
+yra labai galinga duomenų analizės ir
+manipuliavimo biblioteka, naudojama programavimo kalboje Python. Ji buvo
+sukurta, kad padėtų lengviau dirbti su struktūrizuotais duomenimis.
+Pandas labai palengvina duomenų importavimą, valymą, apdorojimą bei
+analizę.
+    DataFrame: Tai yra dvimačių duomenų struktūra, panaši į lentelę su eilutėmis ir stulpeliais, kuri leidžia saugoti ir manipuliuoti su duomenimis. DataFrame gali būti laikomas kaip Excel skaičiuoklė arba SQL lentelė. Jis suteikia daug funkcijų duomenų filtravimui, rūšiavimui ir grupavimui.
+    Series: Tai vienmatė duomenų struktūra, kurią galima laikyti DataFrame stulpeliu. Kiekviena Series turi vieną duomenų tipą ir suteikia įvairias funkcijas duomenų analizei.
+
+    sort_values(): Rikiuoja DataFrame duomenis pagal nurodytą stulpelį ar kelis stulpelius. Pvz., df.sort_values(by='stulpelis') rikiuoja df DataFrame pagal 'stulpelis' stulpelį.
+
+    loc[] ir iloc[]: Šios funkcijos naudojamos pasirinkti tam tikras eilutes ir stulpelius DataFrame objekte. loc[] naudojama pagal etiketes, o iloc[] pagal indeksų pozicijas. Pvz., df.loc[0, 'stulpelis'] grąžina reikšmę iš pirmos eilutės ir 'stulpelis' stulpelio.
+
+    isna(): Patikrina, ar DataFrame objekte yra NaN (ne skaičius) reikšmės. Pvz., df.isna() grąžina boolean tipo DataFrame, kur True reiškia NaN reikšmes.
+
+    drop(): Pašalina nurodytus stulpelius ar eilutes iš DataFrame. Pvz., df.drop(columns=['stulpelis']) pašalina 'stulpelis' stulpelį iš df.
+
+    reset_index(): Atkuria DataFrame indeksą į numatytąjį (skaicius nuo 0 iki n-1). Tai naudinga po rikiavimo ar filtravimo operacijų. Pvz., df.reset_index() atkuria df indeksą.
+
+    set_index(): Nustato vieną iš DataFrame stulpelių kaip indeksą. Pvz., df.set_index('stulpelis') nustato 'stulpelis' kaip df DataFrame indeksą.
+
+    unique(): Grąžina unikalias reikšmes iš DataFrame stulpelio. Pvz., df['stulpelis'].unique() grąžina unikalių reikšmių sąrašą iš 'stulpelis' stulpelio.
+
+    value_counts(): Skaičiuoja, kiek kartų kiekviena reikšmė pasitaiko DataFrame stulpelyje. Pvz., df['stulpelis'].value_counts() grąžina kiekvienos reikšmės pasikartojimų skaičių 'stulpelis' stulpelyje.
+
+    read_csv(): Ši funkcija naudojama nuskaityti CSV failą ir paversti jį Pandas DataFrame objektu. Pvz., pd.read_csv('kelias/iki/failo.csv') nuskaito CSV failą ir grąžina DataFrame.
+
+    head(): Grąžina pirmasias kelias DataFrame eilutes (pagal nutylėjimą - pirmąsias penkias). Tai naudinga greitai peržiūrėti duomenis. Pvz., df.head() rodo pirmąsias penkias df DataFrame eilutes.
+
+    describe(): Pateikia statistinę suvestinę apie numerinius DataFrame stulpelius. Tai apima vidurkį, standartinį nuokrypį, minimumą, maksimumą ir kt. Pvz., df.describe() atspausdina statistinę suvestinę df DataFrame.
+
+    fillna(): Užpildo trūkstamas (NaN) reikšmes DataFrame objekte. Galima nurodyti konkrečią reikšmę ar metodą trūkstamoms reikšmėms užpildyti. Pvz., df.fillna(0) pakeičia visas NaN reikšmes nuliu.
+
+    dropna(): Pašalina eilutes ar stulpelius, kuriuose yra NaN reikšmės. Pvz., df.dropna() pašalina visas eilutes iš df, kuriose yra bent viena NaN reikšmė.
+
+    groupby(): Grupuoja duomenis pagal nurodytą stulpelį ar kelis stulpelius. Pvz., df.groupby('stulpelis') grupuoja duomenis pagal 'stulpelis' stulpelį.
+
+    merge(): Jungia du DataFrame objektus pagal bendrus stulpelius ar indeksą. Pvz., pd.merge(df1, df2, on='stulpelis') sujungia df1 ir df2 pagal 'stulpelis' stulpelį.
+
+    to_csv(): Išsaugo DataFrame objektą į CSV failą. Pvz., df.to_csv('kelias/iki/failo.csv') išsaugo df DataFrame į CSV failą.
+
+    psycopg2 yra populiari PostgreSQL duomenų bazės adapterio
+biblioteka Python programavimo kalboje. Ji leidžia Python programoms
+efektyviai bendrauti su PostgreSQL duomenų bazėmis.
+
+
+Norint prisijungti prie PostgreSQL duomenų bazės naudojant psycopg2, reikia sukurti prisijungimo eilutę ir naudoti connect() funkciją.
+
+# Sukuriamas kursorius
+cursor = conn.cursor()
+
+# Užklausos vykdymas
+cursor.execute(query);
+
+conn.commit() # Patvirtinama transakcija
+
+BeautifulSoup yra Python biblioteka, skirta dirbti su HTML ir XML failais. Ji leidžia lengvai skenuoti ir analizuoti interneto puslapius, išgaunant iš jų reikalingą informaciją.
+
+Rasti pirmąjį konkretų elementą:  title = soup.find('title');
+Rasti visus konkrečius elementus: all_paragraphs = soup.find_all('p');
+Rasti elementą pagal ID: specific_div = soup.find(id='specific_id');
+Rasti elementus pagal klasę: items_with_class = soup.find_all(class_='your_class_name');
+Gauti teksto turinį iš elemento: text = soup.find('p').get_text();
+Gauti atributą iš elemento: link_url = soup.find('a')['href'];
+Gauti tik tekstą iš viso dokumento (be HTML tag'ų): text_only = soup.get_text()
+Galite naudoti skirtingus parser'ius:
+# 'html.parser' yra standartinis, tačiau galite naudoti 'lxml' ar 'html5lib' dėl skirtingų funkcionalumų
+soup = BeautifulSoup(html_doc, 'lxml');
+
+NumPy yra viena iš pagrindinių Python bibliotekų, naudojamų matematikoje ir moksliniuose skaičiavimuose. Ji suteikia efektyvias priemones dirbti su dideliais, daugiamačiais masyvais ir matricomis, taip pat suteikia didelį skaičių matematinių funkcijų, skirtų atlikti operacijas su šiais masyvais.
+
+Masyvo Sukūrimas:
+    np.array([1, 2, 3]) - sukuria vienmatį NumPy masyvą.
+    np.zeros((3,4)) - sukuria masyvą, pilnai užpildytą nuliais.
+    np.ones((2,3)) - sukuria masyvą, pilnai užpildytą vienetais.
+    np.arange(10, 50, 5) - sukuria masyvą su skaičiais nuo 10 iki 50, didėjančiais kas 5.
+Masyvo Formos Keitimas:
+    array.reshape(3,4) - pakeičia masyvo formą į 3x4.
+    array.flatten() - paverčia daugiamatį masyvą į vienmatį.
+
+Masyvo Elementų Pasiekimas:
+    array[2, 3] - paima elementą iš 3-ios eilutės ir 4-os stulpelio.
+    array[:2] - paima pirmus du masyvo elementus.
+    Statistinės Funkcijos:
+        np.mean(array) - apskaičiuoja masyvo vidurkį.
+        np.median(array) - apskaičiuoja masyvo medianą.
+        np.std(array) - apskaičiuoja masyvo standartinį nuokrypį.
+    Matematinės Operacijos:
+        np.add(array1, array2) - sudeda du masyvus.
+        np.subtract(array1, array2) - atima vieną masyvą iš kito.
+        np.multiply(array1, array2) - daugina du masyvus.
+        np.divide(array1, array2) - dalija vieną masyvą iš kito.
+        np.sqrt(array) - apskaičiuoja kiekvieno masyvo elemento šaknį.
+    Matricų Operacijos:
+        np.dot(array1, array2) - atlieka dviejų masyvų skaliarinę daugybą.
+        np.linalg.inv(matrix) - apskaičiuoja matricos atvirkštinę.
+        np.linalg.eig(matrix) - randa matricos eigenverčius ir eigenvektorius.
+    Vienmatės Atsitiktinių Skaičių Sekos:
+        np.random.rand(n) - generuoja n atsitiktinių skaičių tarp 0 ir 1.
+        np.random.randint(low, high, size) - generuoja atsitiktinius sveikus skaičius tarp low (įtraukta) ir high (neįtraukta).
+    Daugiamatės Atsitiktinių Skaičių Sekos:
+        np.random.rand(d1, d2, ..., dn) - generuoja daugiamatį masyvą su atsitiktiniais skaičiais.
+        np.random.randn(d1, d2, ..., dn) - generuoja daugiamatį masyvą pagal standartinį normalųjį pasiskirstymą.
+    Pasirinkimas iš Sekos:
+        np.random.choice(a, size, replace, p) - atsitiktinai pasirenka elementus iš masyvo a. size nurodo išvesties dydį, replace nurodo, ar elementai gali kartotis, o p nurodo tikimybes pasirinkimams.
+    Normalus Pasiskirstymas:
+        np.random.normal(loc, scale, size) - generuoja atsitiktinius skaičius pagal normalųjį pasiskirstymą su vidurkiu loc ir standartiniu nuokrypiu scale.
+    Vienodas Pasiskirstymas:
+        np.random.uniform(low, high, size) - generuoja atsitiktinius skaičius, vienodai pasiskirstančius tarp low ir high.
+
+    Binominis Pasiskirstymas:
+        np.random.binomial(n, p, size) - generuoja atsitiktinius skaičius pagal binominį pasiskirstymą su bandymų skaičiumi n ir tikimybe p.
+    Poissono Pasiskirstymas:
+        np.random.poisson(lam, size) - generuoja atsitiktinius skaičius pagal Poissono pasiskirstymą su vidurkiu lam.

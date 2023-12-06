@@ -1,0 +1,2068 @@
+age = 20
+
+if age >= 18:
+    print("Jus esate pilnametis")
+else:
+    print("Jus nesate pilnametis")
+--------
+vardai = ["Petras", "Antanas", "Ona", "Gediminas"]
+
+if "Ona" in vardai:
+    print("Ona yra vardu sarase")
+else:
+    print("Elementas nerastas")
+-----------
+rodo kiek sarase yra vardu
+vardai = ["Petras", "Antanas", "Ona", "Gediminas"]
+print(len(vardai))
+----------
+age = 17
+
+if age >= 18:
+    print("Jus esate pilnametis")
+elif age == 17:
+    print("Jums liko vieneri metai iki pilnametystes")
+else:
+    print("Jus nesate pilnametis")
+-----------
+fruits = ["Apple", "Kiwi", "Orange", "Watermelon"]
+ieskomas_vaisius = input("Iveskite ieskoma vaisiu_> ")
+
+if ieskomas_vaisius in fruits:
+    indeksas = fruits.index(ieskomas_vaisius)
+    print(f'Vaisius {ieskomas_vaisius} yra sarase su indeksu {indeksas}')
+else:
+    print(f"Vaisius {ieskomas_vaisius} nera sarase")
+----------------
+# Sukurkite sąrašą skaiciai. Patikrinkite, ar pirmasis sąrašo elementas yra lygus 1.
+
+skaiciai = [1, 2, 3, 4, 5]
+if skaiciai[0] == 1:
+    print("Pirmasis elementas yra lygus 1")
+else:
+    print("Pirmasys elementas nera lygus 1")
+    -----------
+    # Patikrinkite, ar pirmasis elementas yra lygus bet kuriam kitam sąrašo elementui.
+
+skaiciai = [1, 2, 3, 4, 5]
+pirmasis = skaiciai[0]
+if pirmasis in skaiciai[1:]:
+    print("Pirmasis elementas yra lygus bet kuriam saraso elementui")
+else:
+    print("Pirmasys elementas nera lygus jokiam kitam saraso elementui")
+-----------
+# Sukurkite sąrašą elementai. Patikrinkite, ar pirmasis ir paskutinis sąrašo elementai yra vienodi;
+
+elementai = [1, 2, 3, 4, 5]
+if elementai[0] == elementai[-1]:
+    print("Pirmasis ir paskutinis elementas yra vienodi")
+else:
+    print("Pirmasis ir paskutinis elementai nera vienodi")
+-------------
+# Sukurkite elementų sąrašus Miestai ir patikrinkite ar paskutinis sąrašo elementas yra ilgesnis nei 3 simboliai?
+
+miestai = ['Vilnius', 'Kaunas', 'Klaipeda', 'Siauliai']
+if len(miestai[3]) > 3:
+    print("ilgesnis nei 3simboliai")
+else:
+    print("trumpsenis nei 3simboliai")
+-----------
+# Sukurkite elementų sąrašus Miestai ir patikrinkite ar paskutinis sąrašo elementas yra ilgesnis nei 3 simboliai?
+
+miestai = ['Vilnius', 'Kaunas', 'Klaipeda', 'Siauliai']
+if len(miestai[3]) > 3:
+    print("ilgesnis nei 3simboliai")
+else:
+    print("trumpsenis nei 3simboliai")
+-----
+# try: except:
+
+try:
+    skaicius1 = float(input("Iveskite pirmaji skaiciu_>"))
+    skaicius2 = float(input("Iveskite antraji skaiciu_>"))
+    rezultatas = skaicius1 / skaicius2
+    print(f"Dalybos rezultatas yra {rezultatas}")
+except ZeroDivisionError:
+    print("Klaida: Dalyba is nulio negalima")
+except ValueError:
+    print("Klaida: Ivesta reiksme nera skaicius")
+--------
+filename = "duomenys.txt"
+
+try:
+    with open(filename, 'r') as failas:
+        content = failas.read()
+    print(content)
+except FileNotFoundError:
+    print(f"Klaida: Failas {filename} nerastas")
+except IOError:
+    print(f"Klaida: Negalima atidaryti failo {filename}")
+
+    arba
+        with open(filename, 'w') as failas:
+        content = failas.write("Duomenys failas")
+        Kad sukurtu faila ir parasytu duomenis i ji
+-----
+import os
+import shutil
+
+pdf_directory = 'pdf_files'
+image_dir = 'images'
+
+file1 = 'duomenys.txt'
+file2 = 'image.jpg'
+
+os.makedirs(pdf_directory, exist_ok=True)
+os.makedirs(image_dir, exist_ok=True)
+
+if os.path.exists(file1):
+    if file1.lower().endswith('.txt'):
+        try:
+            shutil.move(file1, pdf_directory)
+            print(f"Moved {file1} to {pdf_directory}")
+        except Exception as e:
+            print(f"Could not move {file1}: {e}")
+    elif file2.lower().endswith(('.jpg', 'jpeg')):
+        try:
+            shutil.move(file2, image_dir)
+            print(f"Moved {file2} to {image_dir}")
+        except Exception as e:
+            print(f"Could not move {file2}: {e}")
+
+    else:
+        print(f"The files {file1} and {file2} did not match any know file type")
+else:
+    print(f"The directories {pdf_directory} and {image_dir} does not exist")
+----------
+SKAICIUOTUVAS
+
+print("Projektas skaiciuotuvas")
+print("Veiksmai:")
+print("1.Sudetis")
+print("2.Atimtis")
+print("3.Daugyba")
+print("4.Dalyba")
+
+Pasirinkimas = input("Pasirinkite veiksma (1/2/3/4)_>")
+
+if Pasirinkimas in ['1', '2', '3', '4']:
+
+    try:
+        skaicius1 = float(input("Iveskite pirmaji skaiciu_>"))
+        skaicius2 = float(input("Iveskite antraji skaiciu_>"))
+
+
+        if Pasirinkimas == "1":
+            result = skaicius1 + skaicius2
+            print(f"Sudeties rezultatas yra {skaicius1} + {skaicius2} = {result}")
+        elif Pasirinkimas == "2":
+            result = skaicius1 - skaicius2
+            print(f"Atimties rezultatas yra {skaicius1} - {skaicius2} = {result}")
+        elif Pasirinkimas == "3":
+            result = skaicius1 * skaicius2
+            print(f"Daugybos rezultatas yra {skaicius1} * {skaicius2} = {result}")
+        elif Pasirinkimas == "4":
+            try:
+                result = skaicius1 / skaicius2
+                print(f"Dalybos rezultatas yra {skaicius1} / {skaicius2} = {result}")
+            except ZeroDivisionError:
+                print("Klaida: Dalyba is nulio negalima")
+    except ValueError:
+                print("Klaida: Ivesta reiskme nera skaicius")
+else:
+    print("Pasirinktas neteisingas skaicius")
+-------------
+BANKOMATO PRISIJUNGIMO SISTEMA
+# Šis projektas imituos vartotojo prisijungimo sistemą, kurioje vartotojas turi įvesti vartotojo vardą ir slaptažodį.
+# Jei vartotojo vardas ir slaptažodis atitinka iš anksto nustatytas reikšmes, prieiga suteikiama;
+# kitu atveju bus rodomas klaidos pranešimas.
+
+Vartotojo_vardas = "Arunas"
+Vartotojo_slaptazodis = "Jusas"
+
+try:
+    Ivestas_vardas = input("Iveskite vartotojo varda: ")
+    Ivestas_slaptazodis = input("Iveskite vartotojo slaptazodi: ")
+    if Ivestas_vardas == Vartotojo_vardas and Ivestas_slaptazodis == Vartotojo_slaptazodis:
+        print("Sekmingai prisijungete")
+    else:
+        raise Exception("Neteisingas vartotojo vardas arba slaptazodis")
+except Exception as login_error:
+    print(login_error)
+----------
+BANKOMATO SISTEMA su prisijungimu ir funkcijomis:
+# Ši programa imituos paprastą bankomato sąsają,
+# kurioje vartotojas gali išimti arba įnešti pinigus ir patikrinti savo likutį
+
+Vartotojo_vardas = "Arunas"
+Vartotojo_slaptazodis = "Jusas"
+Saskaitos_likutis = 1000
+
+try:
+    Ivestas_vardas = input("Iveskite vartotojo varda: ")
+    Ivestas_slaptazodis = input("Iveskite vartotojo slaptazodi: ")
+    if Ivestas_vardas == Vartotojo_vardas and Ivestas_slaptazodis == Vartotojo_slaptazodis:
+        print("Sekmingai prisijungete")
+        print("Bankomatas")
+        print("Veiksmai:")
+        print("1.Inesti pinigus")
+        print("2.Isimti pinigus")
+        print("3.Patikrinti saskaitos likuti")
+
+        Pasirinkimas = input("Pasirinkite veiksma (1/2/3): ")
+
+        if Pasirinkimas in ['1', '2', '3']:
+            try:
+                if Pasirinkimas == "1":
+                    suma = float(input("Iveskite suma kuria norite ideti: "))
+                    if suma < 0:
+                        raise ValueError("Negalima inesti neigiamos sumos")
+                    Saskaitos_likutis += suma
+                    print(f"Pinigai sekmingai ideti. Jusu saskaitos likutis yra {Saskaitos_likutis}")
+                elif Pasirinkimas == "2":
+                    suma = float(input("Iveskite suma kuria norite isimti: "))
+                    if suma < 0:
+                        raise ValueError("Negalima issimti neigiamos sumos")
+                    if suma > Saskaitos_likutis:
+                        raise ValueError("Negalima issimti daugiau nei yra saskaitoje")
+                    Saskaitos_likutis -= suma
+                    print(f"Pinigai sekmingai issimti. Jusu saskaitos likutis {Saskaitos_likutis}")
+                elif Pasirinkimas == "3":
+                    Saskaitos_likutis
+                    print(f"Jusu banko saskaitos likutis yra: {Saskaitos_likutis}")
+                else:
+                    print("Blogai ivesta")
+            except ValueError:
+                print("")
+    else:
+        raise Exception("Neteisingas vartotojo vardas arba slaptazodis")
+except Exception as login_error:
+    print(login_error)
+------------
+BANKOMATO SISTEMA BE PRISIJUNGIMO
+balance = 1000.0
+
+print("Sveiki atvykę į bankomato sąsają!")
+
+# Display the operations
+print("1. Patikrinti balansą")
+print("2. Inesti pinigus")
+print("3. Išsiimti pinigus")
+
+# Ask the user to choose an operation
+operation = input("Pasirinkite operaciją (1/2/3): ")
+
+try:
+    if operation == '1':
+        # Show the current balance
+        print(f"Jūsų balansas yra: {balance} eurų")
+
+    elif operation == '2':
+        # Ask the user for the amount to deposit
+        amount_to_deposit = float(input("Įveskite įnešamą sumą: "))
+        if amount_to_deposit < 0:
+            raise ValueError("Negalima įnešti neigiamos sumos.")
+        balance += amount_to_deposit
+        print(f"Sėkmingai įnešėte {amount_to_deposit} eurų. Jūsų naujas balansas yra: {balance} eurų")
+
+    elif operation == '3':
+        # Ask the user for the amount to withdraw
+        amount_to_withdraw = float(input("Įveskite išsiimamą sumą: "))
+        if amount_to_withdraw < 0:
+            raise ValueError("Negalima išsiimti neigiamos sumos.")
+        if amount_to_withdraw > balance:
+            raise ValueError("Nepakanka lėšų sąskaitoje.")
+        balance -= amount_to_withdraw
+        print(f"Sėkmingai išsiėmėte {amount_to_withdraw} eurų. Jūsų likutis yra: {balance} eurų")
+
+    else:
+        print("Pasirinktas netinkamas operacijos numeris.")
+except ValueError as e:
+    print(f"Įvyko klaida: {e}")
+----
+Importuoti informacija is url:
+
+import requests
+from bs4 import BeautifulSoup
+import csv
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+}
+# define website url
+URL = "https://www.imdb.com/chart/top/?ref_=nv_mv_250"
+response = requests.get(URL, headers=headers)
+# 403 Forbideen - permission denied
+# 200 OK - website is alive
+# 500 Server error
+# if response.status_code == 200:
+#     print(f"Svetaine veikia: {response.status_code}")
+# else:
+#     print(f"Svetaine neveikia: {response.status_code}")
+soup = BeautifulSoup(response.content, 'html.parser')
+# print(soup)
+movies = soup.find_all('li', class_='ipc-metadata-list-summary-item sc-59b6048d-0 cuaJSp cli-parent')
+new_movies_list = []
+
+for movie in movies:
+    title = movie.find('h3', class_='ipc-title__text').text.strip()
+    years = movie.find('span', class_='sc-479faa3c-8 bNrEFi cli-title-metadata-item').text.strip()
+    length = movie.find('div', class_='sc-479faa3c-7 jXgjdT cli-title-metadata').text.strip()[4:10]
+    new_movies_list.append((title, years, length))
+
+# print(new_movies_list)
+csv_file = "data.csv"
+with open(csv_file, 'w', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Title', 'Years', 'Movie Length'])
+    writer.writerows(new_movies_list)
+
+print(f"Data has been written to {csv_file}")
+----
+GRAZIAI ISFILTRUOTAS SARASAS(for) PAGAL DAUGIAU PASIRINKIMA:
+automobiliai = {
+    'bmw 530':{
+        'year': 2000,
+        'engine': '3.0l'
+    },
+    'audi a8':{
+        'year': 2009,
+        'engine': '4.2l'
+    },
+    'mercedesbenz e220':{
+        'year': 1996,
+        'engine': '2.2l'
+    },
+    'volkswagen passat':{
+        'year': 2012,
+        'engine': '2l'
+    }
+}
+
+isfiltruoti_automobiliai = {model: details for model, details in automobiliai.items() if details['year']>2009}
+print("Automobiliai kurie buvo pagaminti po 2009")
+for model, details in isfiltruoti_automobiliai.items():
+    print(f"{model}: year {details['year']}, engine {details['engine']}")
+
+ARBA kitas pvz
+
+mokiniai = {
+    'Jonas': 10,
+    'Petras': 6,
+    'Antanas': 8,
+    'Ieva': 9,
+    'Tomas': 4
+}
+
+isfiltruoti_mokiniai = {vardas: pazymys for vardas, pazymys in mokiniai.items() if pazymys>6}
+print("Mokiniai kuriu pazymiai yra daugiau nei 6")
+for vardas, pazymys in isfiltruoti_mokiniai.items():
+    print(f"{vardas}: pazymys {pazymys}")
+
+    arba
+
+    isfiltruotos_prekes = {}
+for preke, kaina in prekes.items():
+    if kaina > 5:
+        isfiltruotos_prekes [preke] = kaina
+    else:
+        isfiltruotos_prekes [preke] = round(kaina * 0.10, 2)
+print(isfiltruotos_prekes)
+for preke, kaina in isfiltruotos_prekes.items():
+    print(f"{preke}: {kaina}")
+----
+ISFILTRUOTI IS SARASO TIK SU GALUNE .lt
+adresu_knyga = {
+    'jonas': 'jonas@gmail.com',
+    'antanas': 'antanas@gmail.lt',
+    'petras': 'petras@gmail.com',
+    'tomas': 'tomas@gmail.lt',
+    'egle': 'egle@gmail.com',
+}
+
+isfiltruoti_adresai = {}
+
+for vardas, adresas in adresu_knyga.items():
+    if adresas.endswith('.lt'):
+        isfiltruoti_adresai [vardas] = adresas
+print(isfiltruoti_adresai)
+for vardas, adresas in isfiltruoti_adresai.items():
+    print(f'{vardas}: {adresas}')
+
+arba
+
+isfiltruoti_adresai = {vardas: adresas for vardas, adresas in adresu_knyga.items() if adresas.endswith('.lt')}
+print('adresai, kurie baigiasi .lt')
+for vardas, adresas in isfiltruoti_adresai.items():
+    print(f'{vardas}: {adresas}')
+----
+# Turite vartotojų prisijungimo vardų sąrašą.
+# Vartotojo vardas yra validus, jei jis yra ne trumpesnis nei 6 simboliai ir ne ilgesnis nei 12 simbolių.
+# Parašykite programą, kuri sukurtų žodyną su vartotojų vardais kaip raktus ir True arba False kaip reikšmes,
+# priklausomai nuo to, ar vardas yra validus.
+
+vartotojai = ['Jonas', 'Petras', 'Antanas', 'Tomas', 'Vilius']
+
+isfiltruoti_vartotojai = {}
+
+for vartotojai in vartotojai:
+    if len(vartotojai) >= 6 and len(vartotojai) <= 12:
+        print(f'{vartotojai}: Vartotojas yra validus')
+    else:
+        print(f'{vartotojai}: Vartotojas yra nevalidus')
+
+ARBA
+
+isfiltruoti_vartotojai = {vartotojai: (6 <= len(vartotojai) <= 12) for vartotojai in vartotojai}
+print('Vartotojai kurie yra validus ar nevalidus')
+for vartotojai, reiksme in isfiltruoti_vartotojai.items():
+    print(f'{vartotojai}: {reiksme}')
+----
+# Duotas žodynas, kuriame saugoma informacija apie socialinio tinklo vartotojus ir jų "sekėjų" skaičių.
+# Jūsų užduotis yra sukurti naują žodyną, kuriame bus tik tie vartotojai,
+# kurių sekėjų skaičius yra didesnis nei 1000.
+
+vartotojai = {
+    'Tomas': 500,
+    'Ieva': 246,
+    'Karolina': 977,
+    'Jonas': 1017,
+    'Karolis': 7877
+}
+
+isfiltruoti_vartotojai = {vartotojas: sekejai for vartotojas, sekejai in vartotojai.items() if sekejai > 1000}
+print('Vartotojai kurie turi virš 1 tūkst. sekėjų:')
+for vartotojas, sekejai in isfiltruoti_vartotojai.items():
+    print(f'{vartotojas}: {sekejai}')
+----
+Komanda kuri leidzia ivesti teksta, ir nurodant zodi kuri paraso ir uzsidaro kodas:
+vartotojo_ivestis = ''
+while vartotojo_ivestis != 'pabaiga':
+    vartotojo_ivestis = input('Iveskite teksta (iveskite "pabaiga" noredami uzdaryti programa): ')
+    if vartotojo_ivestis != 'pabaiga':
+        print(f"Jus ivedete: {vartotojo_ivestis}")
+print('Ciklas baigtas')
+----
+Uzduotis su komanda kuri isjungia koda:
+meniu = """
+    1. parodyti vartotojo informacija
+    2. keisti varototojo informacija
+    3. istrinti vartotoja
+    4. iseiti is programos
+    pasirinkite veiksma (iveskite skaiciu):
+"""
+
+pasirinkimas = 0
+while pasirinkimas != 4:
+    print(meniu)
+    try:
+        pasirinkimas = int(input())
+        if pasirinkimas == 1:
+            print("rodoma vartotojo informacija")
+        elif pasirinkimas == 4:
+            print("iseinama is programos")
+    except ValueError:
+        print("Ivestis turi buti skaicius")
+----
+Komanda kuri padaro komandos trumpini:
+def pasisveikinimas(vardas):
+    text = "Labas, " + vardas + "!"
+    return text
+print(pasisveikinimas("modestas"))
+
+arba
+
+def sandauga(skaicius1, skaicius2):
+    rezultatas = skaicius1 * skaicius2
+    return  rezultatas
+daugyba = sandauga(5,5)
+print(daugyba)
+----
+Parasykite funkcija kuri grazintu teksta is kitos puses pvz: Labas = sabaL;
+def apversti_zodi(zodis):
+    return zodis[::-1]
+ivestas_zodis = apversti_zodi("labas")
+print(ivestas_zodis)
+----
+Parasykite funkcija kuri asmens amziu konvertuotu i dienas pvz: asmeniui yra 25 metai = 9125;
+def amzius_dienos(amzius):
+    dienos = amzius * 365
+    return dienos
+amzius = 24
+dienos = amzius_dienos(amzius)
+print(f"Asmuo kuriam yra {amzius}, gyvena {dienos} d.")
+----
+# Parasykite funkcija, kuri suskaičiuoja natūraliųjų skaičių sumą nuo 1 iki nurodyto skaičiaus;
+def sveikasis_skaicius(skaicius):
+    suma = 0
+    while skaicius > 0:
+        suma += skaicius
+        skaicius -= 1
+    return suma
+rezultatas = sveikasis_skaicius(10)
+print(f"{rezultatas}")
+----
+URL info istraukimas ir konvertavimas i csv faila:
+import requests
+from bs4 import BeautifulSoup
+import csv
+
+
+def gauti_svetaines_turini(url):
+    atsakymas = requests.get(url)
+    return atsakymas.content
+
+
+def turinio_analize(turinys):
+    soup = BeautifulSoup(turinys, 'html.parser')
+    objektu_informacija = []
+
+    objektai = soup.find_all('div', class_='project-list-item')
+    for objektas in objektai:
+        pavadinimas = objektas.find('h2', class_='project-title-full project-title')
+        title = pavadinimas.get_text(strip=True) if pavadinimas else None
+
+        if not title:
+            continue
+        plotas_ir_kaina = objektas.find('h3', class_='project-title-full project-min-values')
+
+        if plotas_ir_kaina:
+            h3_tekstas = plotas_ir_kaina.get_text(" ", strip=True)
+            h3_dalys = h3_tekstas.split('|')
+            plotas = None
+            kaina = None
+
+            for tekstas in h3_dalys:
+                if 'Plotas' in tekstas:
+                    plotas = tekstas.split(':')[1].strip().replace(' ', '')
+                elif 'Kaina' in tekstas:
+                    kaina = tekstas.split(':')[1].strip()
+            plotas = plotas if plotas is not None else "Plotas nerastas"
+            kaina = kaina if kaina is not None else "Kaina nerasta"
+        else:
+            plotas = "Plotas nerastas"
+            kaina = "Kaina nerasta"
+
+
+        objektu_informacija.append({
+            'pavadinimas': title,
+            'plotas': plotas,
+            'kaina': kaina
+        })
+
+    return objektu_informacija
+
+
+def csv_failas(failo_pav, duomenys):
+
+    with open(failo_pav, mode='w', newline='', encoding='utf-8') as failas:
+        writer = csv.DictWriter(failas, fieldnames=duomenys[0].keys())
+        writer.writeheader()
+        for objektas in duomenys:
+            writer.writerow(objektas)
+
+def main():
+    url = "https://www.aruodas.lt/uzsienio-objektai/"
+    turinys = gauti_svetaines_turini(url)
+
+    if turinys:
+        duomenys = turinio_analize(turinys)
+        if duomenys:
+            csv_failas('testas.csv', duomenys)
+        else:
+            print("Nerasta jokių objektų.")
+    else:
+        print("Negautas turinys iš svetainės.")
+
+
+if __name__ == '__main__':
+    main()
+----
+Sukurkite funkciją lyginiai, kuri priima sąrašą skaičių
+ir naudoja for ciklą surasti visus lyginius skaičius,
+grąžindama juos kaip naują sąrašą:
+
+def lyginiai(sarasas):
+    lyginiai_skaiciai = []
+
+    for skaicius in sarasas:
+        if skaicius % 2 == 0:
+            lyginiai_skaiciai.append(skaicius)
+    return lyginiai_skaiciai
+
+pradinis_sarasas = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+rezultatas = lyginiai(pradinis_sarasas)
+
+print(f"Lyginiai skaiciai: {rezultatas}")
+----
+Sukurkite programą, kuri nuolat prašo vartotoją įvesti skaičių,
+kol jis įves 0, tada uždaro programą:
+meniu = """
+"""
+
+pasirinkimas = 1
+while pasirinkimas != 0:
+    print(meniu)
+    try:
+        pasirinkimas = int(input("Iveskite skaiciu: "))
+        if pasirinkimas == 0:
+            print("Programa uzdaryta!")
+    except ValueError:
+        print("Ivestis turi buti skaicius")
+
+----
+Class pritaikymas komandoms:
+class Automobilis:
+    def __init__(self, marke, modelis):
+        self.marke = marke
+        self.modelis = modelis
+
+
+    def automobilio_info(self):
+        print(f"Automobilio marke: {self.marke}, modelis: {self.modelis}")
+
+
+audi = Automobilis("Toyota", "Auris")
+audi.automobilio_info()
+----
+Class pritaikymas komandoms:
+class Preke:
+    def __init__(self, prekes_kodas, pavadinimas, kaina):
+        self.prekes_kodas = prekes_kodas
+        self.pavadinimas = pavadinimas
+        self.kaina = kaina
+
+
+    def atspausdinti_kaina_su_pvm(self):
+        PVM = 0.21
+        kaina_su_pvm = self.kaina + (self.kaina * PVM)
+        print(f"{self.pavadinimas}: kaina su PVM: {kaina_su_pvm:.2f} EUR")
+
+preke = Preke("12353123", "Knyga", 13.54)
+preke.atspausdinti_kaina_su_pvm()
+----
+Class pritaikymas komandoms:
+# Sukurkite klasę Mokytojas, kuri turėtų atributus vardas ir dalykas.
+# Pridėkite metodą atspausdinti_info, kuris atspausdintų mokytojo vardą ir dalyką.
+# Pridėkite metodą sveikintis_su_mokiniais;
+# Pridėkite metodą pakeisti_dalyka;
+# Pridėkite metodą pridėti klasę;
+# Pridėkite metodą visos_klases;
+
+class Mokytojas:
+    def __init__(self, vardas, dalykas):
+        self.vardas = vardas
+        self.dalykas = dalykas
+        self.klases = []
+
+    def atspausdinti_info(self):
+        print(f"Mokytojo vardas: {self.vardas}, Dalykas: {self.dalykas}")
+
+    def sveikintis_su_mokiniais(self):
+        print(f"Mokytojas {self.vardas} sveikinasi su mokiniais!")
+
+    def pakeisti_dalyka(self, naujas_dalykas):
+        self.dalykas = naujas_dalykas
+        print(f"Mokytojo {self.vardas} dalykas, pakeistas i {naujas_dalykas}")
+
+    def pakeisti_varda(self, naujas_vardas):
+        self.vardas = naujas_vardas
+        print(f"Mokytojas keiciamas i naujaji mokytoja vardu {naujas_vardas}")
+
+    def prideti_klase(self, klases_pavadinimas):
+        self.klases.append(klases_pavadinimas)
+        print(f"{self.vardas} pridejo nauja klase: {klases_pavadinimas}")
+
+    def visos_klases(self):
+        if self.klases:
+            print(f"{self.vardas} desto siose klasese: {','.join(self.klases)}")
+        else:
+            print(f"{self.vardas} siuo metu nedesto jokiose klasese")
+
+mokytojas = Mokytojas("Petras", "Fizika")
+mokytojas.atspausdinti_info()
+mokytojas.sveikintis_su_mokiniais()
+mokytojas.pakeisti_dalyka("Informatika")
+mokytojas.pakeisti_varda("Antanas")
+mokytojas.prideti_klase("5b")
+mokytojas.visos_klases()
+----
+# Sukurkite paprasta bibliotekos valdymo sistema, naudojant objektinį programavimą (OOP) su Python:
+#
+# Klasė Book: Atspindi knygą bibliotekoje.
+# Turi pagrindines savybes: title (pavadinimas), author (autorius),
+# isbn (tarptautinis standartinis knygos numeris) ir checked_out (pažymėjimas, ar knyga išduota).
+# Taip pat turi metodus check_out (išduoti knygą) ir check_in (grąžinti knygą).
+#
+# Klasė Member: Atspindi bibliotekos narį. Turi savybes name (vardas), member_id (nario ID)
+# ir books_checked_out (išduotų knygų sąrašas). Metodai borrow_book (pasiskolinti knygą)
+# ir return_book (grąžinti knygą) leidžia nariui atitinkamai pasiskolinti ar grąžinti knygas.
+#
+# Klasė Library: Atspindi pačia biblioteką. Laiko knygų (books) ir narių (members) sąrašus,
+# turi metodus add_book (pridėti knygą), add_member (pridėti narį)
+# ir display_available_books (rodyti prieinamas knygas),
+# kurie leidžia valdyti bibliotekos turimų knygų ir narių sąrašus bei rodyti,
+# kurios knygos šiuo metu yra nepaimtos.
+
+class Book:
+    def __init__(self, title, author, isbn):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+        self.checked_out = False
+
+    def check_out(self, member):
+        if not self.checked_out:
+            self.checked_out = True
+            print(f"{self.title} knyga buvo isduota {member.name}")
+        else:
+            print(f"{self.title} knyga jau isduota")
+
+    def check_in(self):
+        self.checked_out = False
+        print(f"{self.title} knyga buvo grazinta")
+
+class Member:
+    def __init__(self, name, member_id):
+        self.name = name
+        self.member_id = member_id
+        self.books_checked_out = []
+
+    def borrow_book(self, book):
+        if not book.checked_out:
+            book.check_out(self)
+            self.books_checked_out.append(book)
+        else:
+            print(f"{book.title} knyga yra neprieinama")
+
+    def return_book(self, book):
+        book.check_in()
+        self.books_checked_out.remove(book)
+
+class Library:
+    def __init__(self):
+        self.books = []
+        self.members = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def add_member(self, member):
+        self.members.append(member)
+
+    def display_available_books(self):
+        available_books = [book for book in self.books if not book.checked_out]
+        for book in available_books:
+            print(f"{book.title} by book author {book.author}")
+
+library = Library()
+book1 = Book("Harry Potter", "Antanas", 152)
+book2 = Book("Menulis", "Tadas", 634)
+book3 = Book("Blinda", "Kestas", 81)
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
+member1 = Member("Vilius", 877)
+member2 = Member("Tomas", 878)
+member3 = Member("Rokas", 879)
+library.add_member(member1)
+library.add_member(member2)
+library.add_member(member3)
+----
+# Ligoninė (Hospital): Ši klasė atspindi ligoninę.
+# Ji turi metodą prideti_skyriu, kuris prideda naują skyrių ligoninėje,
+# ir rodyti_skyrius, kuris atspausdina visų ligoninės skyrių sąrašą.
+#
+# Skyrius (Department): Atspindi ligoninės skyrių. Skyriuje yra medikai ir pacientai.
+# Yra metodai prideti_medika ir prideti_pacienta.
+#
+# Medikas (MedicalStaff): Atspindi mediką. Medikai turi vardą, specialybę ir ID.
+# Metodas atspausdinti_informacija rodo mediko informaciją.
+#
+# Pacientas (Patient): Atspindi pacientą. Pacientai turi vardą, asmens kodą ir būklę.
+# Metodas atspausdinti_informacija rodo paciento informaciją.
+class Department:
+    def __init__(self, pavadinimas):
+        self.pavadinimas = pavadinimas
+        self.medikai = []
+        self.pacientai = []
+
+    def prideti_medika(self, medikas):
+        self.medikai.append(medikas)
+
+    def prideti_pacienta(self, pacientas):
+        self.pacientai.append(pacientas)
+
+    def atspausdinti_informacija(self):
+        print(f"{self.pavadinimas} skyrius: Medikai: {len(self.medikai)}, Pacientai: {len(self.pacientai)}")
+
+class MedicalStaff:
+    def __init__(self, vardas, specialybe, id):
+        self.vardas = vardas
+        self.specialybe = specialybe
+        self.id = id
+
+    def atspausdinti_informacija(self):
+        print(f"Medikas: {self.vardas}, Specialybė: {self.specialybe}, ID: {self.id}")
+
+class Patient:
+    def __init__(self, vardas, asmens_kodas, bukle):
+        self.vardas = vardas
+        self.asmens_kodas = asmens_kodas
+        self.bukle = bukle
+
+    def atspausdinti_informacija(self):
+        print(f"Pacientas: {self.vardas}, Asmens kodas: {self.asmens_kodas}, Būklė: {self.bukle}")
+
+class Hospital:
+    def __init__(self, pavadinimas):
+        self.pavadinimas = pavadinimas
+        self.skyriai = []
+
+    def prideti_skyriu(self, skyrius):
+        self.skyriai.append(skyrius)
+
+    def rodyti_skyrius(self):
+        for skyrius in self.skyriai:
+            skyrius.atspausdinti_informacija()
+
+
+ligonine = Hospital("Centrinė Ligoninė")
+kardiologijos_skyrius = Department("Kardiologija")
+chirurgijos_skyrius = Department("Chirurgijos skyrius")
+ligonine.prideti_skyriu(kardiologijos_skyrius)
+ligonine.prideti_skyriu(chirurgijos_skyrius)
+medikas_jonas = MedicalStaff("Jonas Jonaitis", "Kardiologas", "001")
+medikas_antanas = MedicalStaff("Antanas", "Chirurgas", "002")
+
+pacientas_petras = Patient("Petras Petraitis", "290120-12345", "Sergantis")
+kardiologijos_skyrius.prideti_medika(medikas_jonas)
+chirurgijos_skyrius.prideti_medika(medikas_antanas)
+kardiologijos_skyrius.prideti_pacienta(pacientas_petras)
+
+ligonine.rodyti_skyrius()
+----
+Sukuria class tipo banko sistema su pervedimais.
+IR IKELIA VISUS DUOMENIS I TXT FAILA ARBA CSV FAILA:
+
+Sąskaita (Account): Atspindi banko sąskaitą. Turi atributus account_number (sąskaitos numeris),
+owner (savininkas), ir balance (likutis). Metodai deposit (įnešti pinigus),
+withdraw (išsiimti pinigus), ir transfer (pervesti pinigus) leidžia valdyti sąskaitos lėšas.
+Bankas (Bank): Atspindi banką. Turi metodą create_account (sukurti sąskaitą),
+kuris leidžia klientams atidaryti naujas sąskaitas, ir find_account (rasti sąskaitą),
+leidžiantį rasti sąskaitą pagal jos numerį.
+class Account:
+    def __init__(self, owner, account_number, initial_balance=0.0):
+        self.owner = owner
+        self.account_number = account_number
+        self.initial_balance = initial_balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.initial_balance += amount
+            print(f"{amount} Eur inesta i {self.account_number} saskaita. Naujas likutis: {self.initial_balance} Eur")
+        else:
+            print("Inesama suma negali buti maziau uz nuli")
+
+    def withdraw(self, amount):
+        if amount > self.initial_balance:
+            print("Nepakankamas likutis saskaitoje")
+        else:
+            self.initial_balance -= amount
+            print(f"{amount} Eur issimta is {self.account_number} saskaitos. Naujas likutis: {self.initial_balance} Eur")
+
+    def transfer(self, target_account, amount):
+        if amount <= self.initial_balance:
+            self.initial_balance -= amount
+            target_account.initial_balance += amount
+            print(f"{amount} buvo pervesta i {target_account.account_number}")
+        else:
+            print("Nepakankamas liktutis saskaitoje")
+
+class Bank:
+    def __init__(self):
+        self.accounts = {}
+
+    def create_account(self, account_number, owner):
+        if account_number in self.accounts:
+            print("Saskaitos numeris jau egzistuoja")
+        else:
+            self.accounts[account_number]=Account(owner, account_number)
+            print(f"Saskaita {account_number} sukurta sekmingai!")
+
+    def find_account(self, account_number):
+        return self.accounts.get(account_number, None)
+
+    def save_accounts_info(self, file_name):
+        with open(file_name, "w") as file:
+            for account_number, account in self.accounts.items():
+                file.write(f"Saskaitos nr: {account_number}, Savininkas: {account.owner}, "
+                           f"Likutis: {account.initial_balance}")
+            print(f"Saskaitu informacija issaugota faile {file_name}")
+
+bank = Bank()
+bank.create_account(15, "Petras")
+bank.create_account(20, "Jonas")
+
+account2 = bank.find_account(20)
+account2.deposit(100)
+
+account = bank.find_account(15)
+account.deposit(500)
+account.withdraw(100)
+account.transfer(account2, 100)
+
+bank.save_accounts_info("saskaitos.txt")
+
+ARBA
+virsuje import csv
+
+    def save_accounts_info(self, file_name):
+        with open(file_name, "w", newline="") as file:
+            csv_writer = csv.writer(file)
+            csv_writer.writerow(['Saskaitos numeris', 'Savininkas', 'Likutis'])
+            for account_number, account in self.accounts.items():
+                csv_writer.writerow([account_number, account.owner, account.initial_balance])
+            print(f"Saskaitu informacija issaugota faile {file_name}")
+
+bank.save_accounts_info("saskaitos.csv")
+----
+BANKO SISTEMA SU CLASS IR input sistemom:
+
+class Account:
+    def __init__(self, owner, account_number, initial_balance=0.0):
+        self.owner = owner
+        self.account_number = account_number
+        self.initial_balance = initial_balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.initial_balance += amount
+            print(f"{amount} Eur inesta i {self.account_number} saskaita. Naujas likutis: {self.initial_balance} Eur")
+        else:
+            print("Inesama suma negali buti maziau uz nuli")
+
+    def withdraw(self, amount):
+        if amount > self.initial_balance:
+            print("Nepakankamas likutis saskaitoje")
+        else:
+            self.initial_balance -= amount
+            print(f"{amount} Eur issimta is {self.account_number} saskaitos. Naujas likutis: {self.initial_balance} Eur")
+
+    def transfer(self, target_account, amount):
+        if amount <= self.initial_balance:
+            self.initial_balance -= amount
+            target_account.initial_balance += amount
+            print(f"{amount} buvo pervesta i {target_account.account_number}")
+        else:
+            print("Nepakankamas liktutis saskaitoje")
+
+class Bank:
+    def __init__(self):
+        self.accounts = {}
+
+    def create_account(self, account_number, owner):
+        if account_number in self.accounts:
+            print("Saskaitos numeris jau egzistuoja")
+        else:
+            self.accounts[account_number]=Account(owner, account_number)
+            print(f"Saskaita {account_number} sukurta sekmingai!")
+
+    def find_account(self, account_number):
+        return self.accounts.get(account_number, None)
+
+    def save_accounts_info(self, file_name):
+        with open(file_name, "w", newline="") as file:
+            csv_writer = csv.writer(file)
+            csv_writer.writerow(['Saskaitos numeris', 'Savininkas', 'Likutis'])
+            for account_number, account in self.accounts.items():
+                csv_writer.writerow([account_number, account.owner, account.initial_balance])
+            print(f"Saskaitu informacija issaugota faile {file_name}")
+
+    def meniu(self):
+        while True:
+            print("Sveiki atvyke i banko valdymo sistema!")
+            print("1. Sukurti nauja saskaita")
+            print("2. Inesti pinigu")
+            print("3. Issimti pinigus")
+            print("4. Pervesti pinigus")
+            print("5. Rodyti saskaitu informacija")
+            print("6. Issaugoti saskaitu informacija i faila")
+            print("0. Iseiti")
+
+            pasirinkimas = input("Pasirinkite veiksma:")
+            if pasirinkimas == '1':
+                account_number = input("Iveskite saskaitos numeri: ")
+                owner = input("Iveskite savininko varda ir pavarde: ")
+                self.create_account(account_number, owner)
+            elif pasirinkimas == '2':
+                account_number = input("Iveskite saskaitos numeri: ")
+                account = self.find_account(account_number)
+                amount = float(input("Iveskite inesamos sumos dydi: "))
+                if account:
+                    account.deposit(amount)
+                else:
+                    print("Saskaita nerasta")
+
+            elif pasirinkimas == '3':
+                account_number = input("Iveskite saskaitos numeri: ")
+                account = self.find_account(account_number)
+                amount = float(input("Iveskite norima isimti pinigu suma: "))
+                if account:
+                    account.withdraw(amount)
+                else:
+                    print("Saskaita nerasta")
+            elif pasirinkimas == '4':
+                from_account_number = input("Iveskite siuntejo saskaitos numeri: ")
+                to_account_number = input("Iveskite gavejo saskaitos numeri: ")
+                amount = float(input("Iveskite pervedamos sumos dydi: "))
+                from_account = self.find_account(from_account_number)
+                to_account = self.find_account(to_account_number)
+                if from_account and to_account:
+                    from_account.tranfer(to_account, amount)
+                else:
+                    print("Viena arba abi saskaitos nerastos")
+            elif pasirinkimas == '5':
+                account_number = input("Iveskite saskaitos numeri: ")
+                account = self.find_account(account_number)
+                for account_number, account in self.accounts.items():
+                    print(f"Saskaita {account_number} priklauso {account.owner} ir likutis {account.initial_balance}")
+            elif pasirinkimas == '6':
+                file_name = input("Iveskite failo pavadinima.csv ")
+                self.save_accounts_info(file_name)
+            elif pasirinkimas == '0':
+                print("Programa isjungiama")
+                break
+            else:
+                print("Neteisingas pasirinkimas, bandykite dar karta")
+
+bankas = Bank()
+bankas.meniu()
+----
+GRAZI LENTELE su true false :
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas"],
+    'Age': [23,32,28],
+    'City': ["Vilnius", "Plunge", "Klaipeda"]}
+
+df = pd.DataFrame(data)
+
+df['Asmenys_virs_30'] = df['Age'] > 30
+
+print(df)
+----
+GRAZI LENTELE su average age:
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas"],
+    'Age': [23,32,28],
+    'City': ["Vilnius", "Plunge", "Klaipeda"]}
+
+df = pd.DataFrame(data)
+
+average_age = df['Age'].mean()
+
+print(average_age)
+-----
+GRAZI LENTELE isrikiuoja pagal amziu:
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas"],
+    'Age': [23,32,28],
+    'City': ["Vilnius", "Plunge", "Klaipeda"]}
+
+df = pd.DataFrame(data)
+sorted_df = df.sort_values(by='Age')
+print(sorted_df)
+
+arba atvirksciai tai sorted_df = df.sort_values(by='Age', ascending=False)
+----
+GRAZI LENTELE KAD RODYTU TIK 2 eilutes is daugiau info:
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas"],
+    'Age': [23,32,28],
+    'City': ["Vilnius", "Plunge", "Klaipeda"]}
+
+df = pd.DataFrame(data)
+
+first_two_rows = df.iloc[0:2]
+print(first_two_rows)
+----
+GRAZI LENTELE kad rodytu pagal mano salyga visus kuriem virs 20m:
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'Age': [23,32,28,18,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+
+rows_with_age_above_20 = df.loc[df['Age']>20]
+print(rows_with_age_above_20)
+----
+GRAZI LENTELE suskaiciuot pasikartojancias reiksmes:
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'Age': [23,32,28,16,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+
+age_groups = df.groupby('Age').size()
+print(age_groups)
+----
+GRAZI LENTELE: prideti stulpeli su info jau prie esamos lenteles:
+import pandas as pd
+
+data = {
+    'Name': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'Age': [23,32,28,16,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+
+df['Grade'] = [5,4,8,10,7,8]
+print(df)
+----
+Grazi lentele: sujungia dvieju stulpeliu info i viena ir pasalina pasirinktus stulepius:
+import pandas as pd
+
+data = {
+    'FirstName': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'LastName': ["Jonaitis", "Micke", "Antoninis", "Petrinis", "Simonyte", "Lininis"],
+    'Age': [23,32,28,16,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+
+df['Full name'] = df['FirstName'] + " " + df['LastName']
+df.drop(['FirstName', 'LastName'], axis=1, inplace=True)
+print(df)
+----
+grazi lentele: sujungia du stulpelius kaip nauja stulp, tuos du senus pasalina, ir nauja stulpeli perkelia i pradzia:
+import pandas as pd
+
+data = {
+    'FirstName': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'LastName': ["Jonaitis", "Micke", "Antoninis", "Petrinis", "Simonyte", "Lininis"],
+    'Age': [23,32,28,16,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+
+df['Full name'] = df['FirstName'] + " " + df['LastName']
+df.drop(['FirstName', 'LastName'], axis=1, inplace=True)
+df = df[['Full name'] + [col for col in df.columns if col not in ['Full name', 'City']] + ['City']]
+print(df)
+----
+GRAZI LENTELE SU DIAGRAMA !!!!!:
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'FirstName': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'LastName': ["Jonaitis", "Micke", "Antoninis", "Petrinis", "Simonyte", "Lininis"],
+    'Age': [23,32,28,16,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+df['Grade'] = [5,4,8,10,7,8]
+df['Full name'] = df['FirstName'] + " " + df['LastName']
+df.drop(['FirstName', 'LastName'], axis=1, inplace=True)
+df = df[['Full name'] + [col for col in df.columns if col not in ['Full name', 'City']] + ['City']]
+
+df.plot(kind='bar', x='Full name', y='Grade')
+plt.show()
+----
+GRAZI LENTELE SU SPALVOTA DIAGRAMA:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'FirstName': ["Jonas", "Ona", "Antanas", "Petras", "Laura", "Linas"],
+    'LastName': ["Jonaitis", "Micke", "Antoninis", "Petrinis", "Simonyte", "Lininis"],
+    'Age': [23,32,28,16,21,16],
+    'City': ["Vilnius", "Plunge", "Klaipeda", "Siauliai", "Kaunas", "Anyksciai"]}
+
+df = pd.DataFrame(data)
+
+df['Grade'] = [5,4,8,10,7,8]
+df['Full name'] = df['FirstName'] + " " + df['LastName']
+df.drop(['FirstName', 'LastName'], axis=1, inplace=True)
+df = df[['Full name'] + [col for col in df.columns if col not in ['Full name', 'City']] + ['City']]
+
+colors = ['green' if x >= 8 else 'cornflowerblue' if x >= 7 else 'red' for x in df['Grade']]
+ax = df.plot(kind='bar', x='Full name', y='Grade', color=colors, legend=False)
+ax.set_xticklabels(df['Full name'], rotation=45, ha='right')
+plt.subplots_adjust(bottom=0.3)
+plt.show()
+----
+URL INFO KONVERTAVIMAS I CSV FAILA:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+headers = {
+"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+}
+
+url = "https://coinmarketcap.com/"
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.content, 'html.parser')
+# print(soup)
+# print(response)
+table = soup.find('table')
+# print(table)
+
+if table:
+    data = []
+    for row in table.find("tbody").find_all("tr"):
+        columns = row.find_all("td")
+        if len(columns) >= 7:
+            crypto_data = {
+                'Name': columns[2].text.strip(),
+                'Price': columns[3].text.strip(),
+                '1h %': columns[4].text.strip(),
+                '24h %': columns[5].text.strip(),
+                'Market Cap': columns[6].text.strip(),
+                'Volume(24h)': columns[7].text.strip(),
+                'Circulating Supply': columns[8].text.strip(),
+            }
+            data.append(crypto_data)
+# print(data)
+
+df = pd.DataFrame(data)
+# print(df)
+df.to_csv("crypto.csv", index = False)
+----
+ISTRAUKIA info is url, su funkcija kuri istraukia norima skaiciu eiluciu:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+import time
+import re
+
+webdriver_path = "C:/Users/User/Downloads/chromedriver-win64/chromedriver.exe"
+service = Service(webdriver_path)
+service.start()
+driver = webdriver.Chrome(service=service)
+data = []
+
+for i in range(1,5):
+    url = f"https://coinmarketcap.com/?page={i}"
+    driver.get(url)
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while True:
+        driver.execute_script("window. scrollBy(0,10);")
+        time.sleep(1)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+        last_height = new_height
+
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    table = soup.find('table')
+
+    if table:
+        for row in table.find("tbody").find_all("tr"):
+            columns = row.find_all("td")
+            if len(columns) >= 9:
+                volume_text = columns[8].text.strip()
+                volume_match = re.search(r'\$\d{1,3}(,\d{3})*\.?\d*[BMK]?',volume_text)
+                volume = volume_match.group(0)[:15] if volume_match else 'N/A'
+
+                market_text = columns[7].text.strip()
+                market_match = re.search(r'\$\d{1,3}(,\d{3})*\.?\d*[BMK]?',market_text)
+                market = market_match.group(0) if market_match else 'N/A'
+
+                crypto_data = {
+                    'Name': columns[2].text.strip(),
+                    'Price': columns[3].text.strip(),
+                    '1h %': columns[4].text.strip(),
+                    '24h %': columns[5].text.strip(),
+                    '7d %': columns[6].text.strip(),
+                    'Market Cap': market,
+                    'Volume(24h)': volume,
+                    'Circulating Supply': columns[9].text.strip(),
+                }
+                data.append(crypto_data)
+
+driver.quit()
+df = pd.DataFrame(data)
+df.to_csv("crypto.csv", index = False)
+----
+URL INFO ISTRAUKIMAS - PADARYTA LENTELE PAGAL DF:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import matplotlib.pyplot as plt
+
+url = "http://www.meteo.lt/en/miestas?placeCode=Vilnius"
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+# print(soup)
+# print(response)
+
+weekdays = soup.find_all('span', class_='date') #inspect'e - <span class="date">Thursday<br>11.30</span>
+# print(weekdays)
+
+temperatures = soup.find_all('span', class_='big below-zero')[1::2] #inspect'e - <span class="big below-zero">-4 °C</span>
+# print(temperatures)
+
+wind = soup.find_all('span', class_='small')[::2]
+# print(wind)
+
+weather_data = []
+for day, temp, wind in zip(weekdays, temperatures, wind):
+    day_text = day.get_text().split(',')[0][:-5]
+    temp_text = temp.get_text().replace('°C', '').strip()
+    wind_text = wind.get_text().strip()
+    wind_speed = int(wind_text.split()[0])
+    weather_data.append({'Weekday': day_text, 'Temperature': int(temp_text), 'Wind Speed': wind_speed})
+# print(weather_data)
+
+df = pd.DataFrame(weather_data)
+print(df)
+
+PRITAIKYTA DIAGRAMA IR ISSAUGOJIMO FUNKCIJA:
+plt.figure(figsize=(10,6))
+plt.scatter(df['Temperature'], df['Wind Speed'])
+plt.xlabel('Temperature')
+plt.ylabel('Wind Speed')
+plt.title('Relationship between temperature and wind speed')
+plt.savefig('pythonmeteo.png')
+# plt.show()
+
+PRITAIKYTA min max funkcijos:
+# max_temp = df['Temperature'].max()
+# min_temp = df['Temperature'].min()
+# # print(f'Minimali savaites temperatura: {min_temp}')
+# # print(f'Maksimali savaites temperatura: {max_temp}')
+----
+Daroma diagrama ir kitos funkcijos pagal jau esama CSV faila:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('crypto.csv')
+for col in ['1h %', '24h %', '7d %']:
+    df[col] = df[col].str.rstrip('%').astype('float') / 100
+
+df['Price'] = df['Price'].replace('$', '').replace('...', '')
+df['Market Cap'] = df['Market Cap'].replace('[$,]', '', regex=True).replace('...', '')
+df['Volume(24h)'] = df['Volume(24h)'].replace('[$,]', '', regex=True).replace('...', '')
+
+
+def adjust_market_cap(value):
+    if 'B' in value:
+        return float(value.replace('B', '')) * 1e9
+    elif 'M' in value:
+        return float(value.replace('M', '')) * 1e6
+    else:
+        return float(value)
+
+
+df['Market Cap'] = df['Market Cap'].apply(adjust_market_cap)
+df['Volume(24h)'] = df['Volume(24h)'].astype(float)
+
+# print(df)
+
+avg_24h_change = df['24h %'].mean()
+max_volume = df[df['Volume(24h)']==df['Volume(24h)'].max()]
+max_marketcap = df[df['Market Cap']==df['Market Cap'].max()]
+sorted_df = df.sort_values(by='Market Cap', ascending=False)
+print(f'Vidurkis: {avg_24h_change:.2%}')
+print("")
+print("Cryptocurrency with the Highest Trading Volume in the Last 24h:")
+print(max_volume[['Name','Volume(24h)']])
+print("")
+print("Cryptocurrency with the Highest Market Cap in the Last 24h:")
+print(max_marketcap[['Name', 'Market Cap']])
+top_cryptos = df.nlargest(5,'Market Cap')
+plt.figure(figsize=(12, 6))
+plt.bar(top_cryptos['Name'], top_cryptos['Market Cap'])
+plt.xlabel('Cryptocurrency')
+plt.ylabel('Market Cap($)')
+plt.title('Top 5 Cryptocurrencies by Market Cap')
+plt.xticks(rotation=45, ha='right')
+plt.subplots_adjust(bottom=0.3)
+plt.show()
+----
+Importuoti is url info su diagrama:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+url = 'http://www.meteo.lt/en/miestas?placeCode=Vilnius'
+
+response = requests.get(url)
+
+soup = BeautifulSoup(response.content, 'html.parser')
+
+weekdays = soup.find_all('span', class_='date')
+temperatures = soup.find_all('span', class_='temperature')[2::2]
+wind = soup.find_all('span', class_='small')[::2]
+
+weather_data = []
+for day, temp, wind in zip(weekdays, temperatures, wind):
+    day_text = day.get_text().split(',')[0][:-5]
+    temp_text = temp.get_text().replace('°C', '').strip()
+    wind_text = wind.get_text().strip()
+    wind_speed = int(wind_text.split()[0])
+    weather_data.append({'Weekday': day_text, 'Temperature': int(temp_text), 'Wind Speed': wind_speed})
+
+df = pd.DataFrame(weather_data)
+
+max_temperature = df['Temperature'].max()
+min_temperature = df['Temperature'].min()
+average_temperature = df['Temperature'].mean()
+df['Temp_Difference'] = df['Temperature'].diff()
+
+X = df[['Wind Speed']]
+y = df['Temperature']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+X_range = pd.DataFrame({'Wind Speed': range(int(min(X['Wind Speed'])), int(max(X['Wind Speed'])) + 1)})
+y_predicted = model.predict(X_range)
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Wind Speed'], df['Temperature'], color='blue', label='Actual Data')
+plt.plot(X_range, y_predicted, color='red', label='Predicted Temperatures')
+
+plt.xlabel('Wind Speed (m/s)')
+plt.ylabel('Temperature (°C)')
+plt.title('Temperature vs. Wind Speed and Predicted Temperatures')
+plt.legend()
+plt.show()
+----
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+url = "https://www.varle.lt/nesiojami-kompiuteriai/nesiojami-kompiuteriai/"
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+
+info = soup.find_all('div', class_='spec-shortcuts')
+
+price = soup.find_all('div', class_='price-container')
+
+rate = soup.find_all('li', class_='rating')
+
+stock = soup.find_all('li', class_='stock')
+
+all_data = []
+for info,price,rate,stock in zip(info, price, rate, stock):
+    info_text = info.get_text().replace('Gamintojas', '').split()[0]
+    price_text = price.get_text().split()[0]
+    rate_text = rate.get_text().split()[0]
+    stock_text = stock.get_text().strip().replace('Liko tik: ', '').replace(' vnt.', '')
+    all_data.append({'INFO': info_text, 'KAINA': price_text, 'REITINGAS': rate_text, 'LIKUTIS': stock.text})
+
+df = pd.DataFrame(all_data)
+df.to_csv("pythonvarle.csv", index = False)
+print(df)
+----
+scrapinam is url i csv:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import re
+
+url = "https://www.varle.lt/nesiojami-kompiuteriai/nesiojami-kompiuteriai/"
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+
+info = soup.find_all('div', class_='spec-shortcuts')
+
+price = soup.find_all('div', class_='price-container')
+
+rate = soup.find_all('li', class_='rating')
+
+stock = soup.find_all('li', class_='stock')
+
+all_data = []
+for info, price, rate, stock in zip(info, price, rate, stock):
+    info_text = info.get_text().replace('Gamintojas', '').split()[0]
+    price_text = price.get_text().split()[0]
+    rate_text = rate.get_text().split()[0]
+
+    stock_raw_text = stock.get_text()
+    stock_match = re.search(r'(\d+\+?)', stock_raw_text)
+    stock_text = stock_match.group(1) if stock_match else "Unknown"
+
+    all_data.append({
+        'INFO': info_text,
+        'KAINA': price_text,
+        'REITINGAS': rate_text,
+        'LIKUTIS': stock_text
+    })
+
+df = pd.DataFrame(all_data)
+df.to_csv("pythonvarle.csv", index = False)
+print(df)
+----
+Scarpinam url, iskelimas is url i csv:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+}
+
+url = "https://pigu.lt/lt/autoprekes/ratlankiai"
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+info = soup.find_all('p', class_='product-name')
+price = soup.find_all('div', class_='product-price')
+rate = soup.find_all('div', class_='product-options__item')[::6]
+
+all_data = []
+for info,price,rate in zip(info, price, rate):
+    info_text = info.get_text().split()[0]
+    price_text = price.get_text().split()[0]
+    rate_text = rate.get_text().split()[2]
+    all_data.append({
+        'Pavadinimas': info_text,
+        'Kaina': price_text,
+        'Ratlankio diametras': rate_text
+    })
+
+df = pd.DataFrame(all_data)
+df.to_csv("pythonpigult.csv", index = False)
+print(df)
+----
+Duomenu iskelimas is url ir sukelimas i SQL:
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import psycopg2
+
+
+db_host='localhost'
+db_name='pythonpigu'
+db_user='postgres'
+db_password='Pprivatu22'
+connection=psycopg2.connect(host=db_host, database=db_name, user=db_user, password=db_password)
+cursor=connection.cursor()
+create_table_querry='''
+CREATE TABLE IF NOT EXISTS ratlankiai(
+    id serial primary key,
+    pavadinimas varchar(255),
+    kaina decimal(10,2),
+    diametras int
+)
+'''
+cursor.execute(create_table_querry)
+
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+}
+
+url = "https://pigu.lt/lt/autoprekes/ratlankiai"
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+info = soup.find_all('p', class_='product-name')
+price = soup.find_all('div', class_='product-price')
+rate = soup.find_all('div', class_='product-options__item')[::6]
+
+all_data = []
+for info,price,rate in zip(info, price, rate):
+    info_text = info.get_text().split()[0]
+    price_text = price.get_text().split()[0]
+    rate_text = rate.get_text().split()[2]
+    insert_querry = '''
+    INSERT INTO ratlankiai(pavadinimas, kaina, diametras)values(%s, %s, %s)
+    '''
+    cursor.execute(insert_querry,(info_text, price_text, rate_text))
+    connection.commit()
+----
+Miesto transporto srautu analize:
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+times = pd.date_range(start='2023-01-01', end='2023-01-31', freq='H')
+vehicle_counts = np.random.randint(50,500,size=len(times))
+travel_times = np.random.randint(5,60,size=len(times))
+locations = np.random.choice(['Centras', 'Rajonas', 'Priemiestis'], size=len(times))
+
+traffic_data = pd.DataFrame({'Laikas': times, 'Vieta': locations, 'Transporto priemoniu skaicius': vehicle_counts,
+                             'Keliones trukme (min)': travel_times})
+# print(traffic_data.head())
+
+# Nustatyti vidutinę kelionės trukmę ir automobilių skaičių.
+avg_travel_time = np.mean(traffic_data['Keliones trukme (min)'])
+avg_vehicle = np.mean(traffic_data['Transporto priemoniu skaicius'])
+# print(f'Vidutine keliones trukme: {avg_travel_time:.2f}')
+# print(f'Vidutinis masinu skaicius: {avg_vehicle:.2f}')
+
+# Nustatykite spūsčių pikus ir jų trukmę.
+peak_hours = traffic_data[traffic_data['Keliones trukme (min)']>45]
+peak_count = peak_hours['Laikas'].dt.hour.value_counts()
+# print("Eismo spuciu piko valandos:")
+# print(peak_count)
+
+# Palyginkite skirtingas miesto dalis pagal eismo intensyvumą.
+location_traffic = traffic_data.groupby('Vieta')['Transporto priemoniu skaicius'].mean()
+print("Eismo intesyvumas pagal vieta:")
+print(location_traffic)
+
+# location_traffic.plot(kind='bar')
+# plt.title('Eismo intensyvumas pagal vieta')
+# plt.xlabel('Vieta')
+# plt.ylabel('Vidutinis transporto priemoniu skaicius')
+# plt.xticks(rotation=0)
+# plt.show()
+
+# peak_count.plot(kind='bar')
+# plt.title('Spusciu piko valandos')
+# plt.xlabel('Valanda')
+# plt.ylabel('Spusciu skaicius')
+# plt.xticks(rotation=0)
+# plt.show()
+----
+Socialiniu mediju analize:
+
+# Duomenų kūrimas
+np.random.seed(0)
+dates = pd.date_range(start='2023-01-01', end='2023-01-31', freq='H')
+posts = np.random.randint(0, 5, size=len(dates))
+likes = np.random.randint(0, 100, size=len(dates))
+comments = np.random.randint(0, 50, size=len(dates))
+
+# Sukuriame DataFrame
+social_media_data = pd.DataFrame({'Laikas': dates, 'Įrašai': posts, 'Patiktukai': likes, 'Komentarai': comments})
+# print(social_media_data.head())
+
+average_posts = np.mean(social_media_data['Įrašai'])
+average_likes = np.mean(social_media_data['Patiktukai'])
+average_comments = np.mean(social_media_data['Komentarai'])
+
+# print(f"Vidutinis įrašų skaičius: {average_posts:.2f}")
+# print(f"Vidutinis patiktukų skaičius: {average_likes:.2f}")
+# print(f"Vidutinis komentarų skaičius: {average_comments:.2f}")
+
+peak_hours = social_media_data['Laikas'].dt.hour.value_counts()
+print("Aktyviausi naudotojų veiklos laikotarpiai:")
+# print(peak_hours)
+
+# Skaičiuojame bendrą elgsena (patiktukai + komentarai)
+social_media_data['Bendra Elgsena'] = social_media_data['Patiktukai'] + social_media_data['Komentarai']
+interaction_by_time = social_media_data.groupby(social_media_data['Laikas'].dt.hour)['Bendra Elgsena'].mean()
+
+
+print("Įrašų populiarumas pagal dienos laiką:")
+print(interaction_by_time)
+
+# Vizualizuojame įrašų populiarumą
+interaction_by_time.plot(kind='bar')
+plt.title('Bendra Vartotojo Elgsena Pagal Valandą')
+print("Aktyviausi naudotojų veiklos laikotarpiai:")
+print(peak_hours)
+plt.xlabel('Valanda')
+plt.ylabel('Vidutinė Vartotojo Elgsena')
+plt.show()
+----
+Duomenu kurimas, vizualizavimas:
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+np.random.seed(0)
+
+# Duomenu kurimas
+dates = pd.date_range(start='2010-01-01', end='2020-12-31', freq='M')
+energy_consumption = np.random.normal(100, 20, size=len(dates))
+solar_energy = np.random.normal(50, 10, size=len(dates))
+wind_energy = np.random.normal(40, 15, size=len(dates))
+hydro_energy = np.random.normal(30, 5, size=len(dates))
+termo_energy = np.random.normal(60, 20, size=len(dates))
+
+energy_data = pd.DataFrame({'Data': dates, 'Suvartojimas': energy_consumption, 'Saules energija': solar_energy,
+                            'Vejo energija': wind_energy,
+                            'Hydro energija': hydro_energy, 'Termo energija': termo_energy})
+# print(energy_data.head())
+
+# Metine analize
+annual_data = energy_data.resample('Y', on = 'Data').sum()
+annual_data['Atsinaujinanti gamyba (%)'] =(annual_data['Saules energija']+annual_data['Vejo energija']+
+                                           annual_data['Hydro energija'])/annual_data['Suvartojimas']*100
+annual_data['Neatsinaujinanti gamyba (%)'] =annual_data['Termo energija']/annual_data['Suvartojimas']*100
+X = np.array(range(len(annual_data))).reshape(-1, 1)
+y = annual_data['Suvartojimas'].values
+model = LinearRegression().fit(X, y)
+future_years = np.array(range(annual_data.index.year[-1]+1, annual_data.index.year[-1]+6))
+future_consumption = model.predict(future_years.reshape(-1, 1))
+
+# Vizualizavimas
+plt.figure(figsize=(10, 6))
+plt.plot(annual_data.index.year, annual_data['Suvartojimas'], label='Faktinis suvartojimas')
+plt.plot(future_years, future_consumption, label='Prognozuojamas suvartojimas', linestyle='--')
+plt.title('Metinis energijos suvartojimas ir prognoze')
+plt.xlabel('Metai')
+plt.ylabel('Energijos suvartojimas')
+plt.legend()
+plt.show()
+----
+Scrapinam is url, ikeliam i duombaze:
+Kad paleisti koda, reikia per pgadmin sukurti database,
+tada pycharme virsuje kode dbname turi irasyti ta database pavadinima.
+paleidus koda kad matyti info per pgadmin, paspausti ant sukurto table-edit-view all rows.
+
+from bs4 import BeautifulSoup
+import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+import time
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import psycopg2
+
+db_host='localhost'
+db_name='biblioteka'
+db_user='postgres'
+db_password='Pprivatu22'
+connection=psycopg2.connect(host=db_host, database=db_name, user=db_user, password=db_password)
+cursor=connection.cursor()
+create_table_querry='''
+CREATE TABLE IF NOT EXISTS bibliotekos(
+    biblioteka_id serial primary key,
+    pavadinimas text,
+    autorius text,
+    publikavimo_duomenys text
+)
+'''
+cursor.execute(create_table_querry)
+
+webdriver_path = "C:/Users/User/Downloads/chromedriver-win64/chromedriver.exe"
+service = Service(webdriver_path)
+service.start()
+driver = webdriver.Chrome(service=service)
+data = []
+
+url= f'https://ibiblioteka.lt/metis/publication?q=y3z3t6av9'
+driver.get(url)
+def paspausti():
+    load_more = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, '.mat-stroked-button > button:nth-child(1)'))
+    )
+    driver.execute_script("arguments[0].scrollIntoView();", load_more)
+    load_more.click()
+    time.sleep(4)
+
+driver.execute_script('window.scrollBy(0, 500);')
+time.sleep(4)
+for i in range(1, 2):
+    paspausti()
+
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+table = soup.find('table', class_='c-data-table')
+
+if table:
+    for row in table.find_all("div", class_='c-result-item__details'):
+        cols = row.find_all("p")
+        if len(cols) >= 3:
+            title = cols[0].text.strip().replace('Pavadinimas:','').replace('[', '').replace(']', '')
+            if cols[1].text.strip().startswith('Autorius:'):
+                author = cols[1].text.strip().replace('Autorius:', '')
+                if cols[2].text.strip().startswith('Laidos duomenys:'):
+                    continue
+                else:
+                    pub_data = cols[2].text.strip().replace('Publikavimo duomenys:', '')
+            elif cols[1].text.strip().startswith('Publikavimo duomenys:'):
+                continue
+            else:
+                continue
+            insert_querry = '''
+            INSERT INTO bibliotekos(pavadinimas, autorius, publikavimo_duomenys)values(%s, %s, %s)
+            '''
+            cursor.execute(insert_querry,(title, author, pub_data))
+            connection.commit()
+
+
+            # bibl_data = {
+            #     'Pavadinimas': title,
+            #     'Autorius': author,
+            #     'Publikavimo duomenys': pub_data
+            # }
+            # data.append(bibl_data)
+
+# driver.quit()
+# df = pd.DataFrame(data)
+# df.to_csv("biblioteka.csv", index = False)
+----
+SCRAP:
+
+from bs4 import BeautifulSoup
+import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+import time
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import psycopg2
+
+webdriver_path = "C:/Users/User/Downloads/chromedriver-win64/chromedriver.exe"
+service = Service(webdriver_path)
+service.start()
+driver = webdriver.Chrome(service=service)
+data = []
+
+url= f'https://ibiblioteka.lt/metis/publication?q=y3z3t6av9'
+driver.get(url)
+def paspausti():
+    load_more = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, '.mat-stroked-button > button:nth-child(1)'))
+    )
+    driver.execute_script("arguments[0].scrollIntoView();", load_more)
+    load_more.click()
+    time.sleep(4)
+
+driver.execute_script('window.scrollBy(0, 500);')
+time.sleep(4)
+for i in range(1, 2):
+    paspausti()
+
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+table = soup.find('table', class_='c-data-table')
+
+if table:
+    for row in table.find_all("div", class_='c-result-item__details'):
+        cols = row.find_all("p")
+        if len(cols) >= 3:
+            title = cols[0].text.strip().replace('Pavadinimas:','').replace('[', '').replace(']', '')
+            if cols[1].text.strip().startswith('Autorius:'):
+                author = cols[1].text.strip().replace('Autorius:', '')
+                if cols[2].text.strip().startswith('Laidos duomenys:'):
+                    continue
+                else:
+                    pub_data = cols[2].text.strip().replace('Publikavimo duomenys:', '')
+            elif cols[1].text.strip().startswith('Publikavimo duomenys:'):
+                continue
+            else:
+                continue
+            bibl_data = {
+                'Pavadinimas': title,
+                'Autorius': author,
+                'Publikavimo duomenys': pub_data
+            }
+            data.append(bibl_data)
+
+driver.quit()
+df = pd.DataFrame(data)
+df.to_csv("biblioteka.csv", index = False)
+----
+SCRAP:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import psycopg2
+import csv
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+    }
+
+data = []
+for i in range(1, 100):
+    url=f'https://elvislab.lt/leidiniai/{i}'
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    title = soup.find('h1', class_='-my-4 text-3xl font-bold')
+    if not title:
+        continue
+    title_text = title.get_text()
+    author = soup.find('h2', class_='mb-3 pb-1 text-primary font-bold')
+    if not author:
+        continue
+    author_text = author.get_text()
+    if len(soup.find_all('div', class_='md:w-7/12')) <= 9:
+        continue
+    pub_data = soup.find_all('div', class_='md:w-7/12')[9]
+    pub_data_text = pub_data.get_text().replace('|', '').replace('\n', '').replace(
+        '                                               ', ' ')
+    book_info = {
+        'Pavadinimas': title_text,
+        'Autorius': author_text,
+        'Publikavimo duomenys': pub_data_text
+    }
+    data.append(book_info)
+df = pd.DataFrame(data)
+df.to_csv("biblioteka2.csv", index = False)
+----
+SCRAP IMPORT TO DATABASE:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import psycopg2
+import csv
+
+db_host='localhost'
+db_name='biblioteka2'
+db_user='postgres'
+db_password='Pprivatu22'
+connection=psycopg2.connect(host=db_host, database=db_name, user=db_user, password=db_password)
+cursor=connection.cursor()
+create_table_querry='''
+CREATE TABLE IF NOT EXISTS bibliotekos2(
+    biblioteka2_id serial primary key,
+    pavadinimas text,
+    autorius text,
+    publikavimo_duomenys text
+)
+'''
+cursor.execute(create_table_querry)
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+    }
+
+data = []
+for i in range(1, 10):
+    url=f'https://elvislab.lt/leidiniai/{i}'
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    title = soup.find('h1', class_='-my-4 text-3xl font-bold')
+    if not title:
+        continue
+    title_text = title.get_text()
+    author = soup.find('h2', class_='mb-3 pb-1 text-primary font-bold')
+    if not author:
+        continue
+    author_text = author.get_text()
+    if len(soup.find_all('div', class_='md:w-7/12')) <= 9:
+        continue
+    pub_data = soup.find_all('div', class_='md:w-7/12')[9]
+    pub_data_text = pub_data.get_text().replace('|', '').replace('\n', '').replace(
+        '                                               ', ' ')
+    insert_querry = '''
+                INSERT INTO bibliotekos2(pavadinimas, autorius, publikavimo_duomenys)values(%s, %s, %s)
+                '''
+    cursor.execute(insert_querry, (title_text, author_text, pub_data_text))
+    connection.commit()
+----
+SCRAP:
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+}
+
+url = "https://www.engelvoelkers.com/en-us/properties/rent-apartment/"
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+table = soup.find_all('div', class_='ev-teaser-content')
+table_data = []
+for house in table:
+    title = house.find('div', class_='ev-teaser-title').text.strip()[10::]
+    location = house.find('div', class_='ev-teaser-subtitle').text.strip()
+    price = house.find('div', class_='ev-value').text.strip().replace(' USD', '')
+    house_details = house.find_all('span', class_='ev-teaser-attribute-value')
+    if len(house_details) >= 4:
+        bedrooms = house_details[0].text.strip()
+        bathrooms = house_details[1].text.strip()
+        surface_area = house_details[2].text.strip().replace(' m²', '')
+        property_area = house_details[3].text.strip().replace(' m²', '')
+    else:
+        continue
+    table_data.append({
+        'Valstybe': title,
+        'Adresas': location,
+        'Kaina': price,
+        'Miegamieji': bedrooms,
+        'Vonios kambariai': bathrooms,
+        'Patalpu dydis': surface_area,
+        'Visos nuosavybes dydis': property_area
+    })
+
+df = pd.DataFrame(table_data)
+df.to_csv("pythonhouse.csv", index = False)
+----
+### ANALIZE:
+# Vidutinis plotas pagal vietove:
+# df['Patalpu dydis'] = df['Patalpu dydis'].astype(float) # Teksa pavercia i skaiciu reiksme
+# avg_area_by_location = df.groupby('Adresas')['Patalpu dydis'].mean()
+# print(avg_area_by_location)
+
+# Kainu paskirstymas pagal vietove:
+# df['Kaina'] = df['Kaina'].astype(float) # Teksa pavercia i skaiciu reiksme
+# sns.boxplot(x='Adresas', y='Kaina', data=df)
+# plt.xticks(rotation=45)
+# plt.show()
+
+# Bendra ploto ir kainos rysys:
+# plt.figure(figsize=(12,6))
+# sns.scatterplot(x='Patalpu dydis', y='Kaina', data=df)
+# plt.title('Bendra ploto ir kainos rysis')
+# plt.show()
+
+# Miegamuju ir vonios kambariu skaicius pasiskirstymas:
+# plt.figure(figsize=(12,6))
+# plt.subplot(1,2,1)
+# sns.displot(df['Miegamieji'], kde=True, bins=5)
+# plt.title('Miegamuju skaiciaus paskirstymas')
+# plt.subplot(1,2,2)
+# sns.displot(df['Vonios kambariai'], kde=True, bins=5)
+# plt.title('Vonios kambariu skaiciaus pasiskirstymas')
+# plt.show()
+
+# Kainu paskirstymas:
+# plt.figure(figsize=(12,6))
+# sns.displot(df['Kaina'], bins=20, kde=True)
+# plt.title('Kainu pasiskirstymas')
+# plt.show()
+
+# 3D Grafikas:
+# fig = plt.figure(figsize=(10,8))
+# ax = fig.add_subplot(111, projection='3d')
+# ax.scatter(df['Miegamieji'], df['Patalpu dydis'], df['Kaina'], c='blue', marker='o')
+# ax.set_xlabel('Miegamieji')
+# ax.set_ylabel('Patalpu dydis')
+# ax.set_zlabel('Kaina')
+# plt.title('Kainos miegamuju sk. ir bendro ploto santykis')
+# plt.show()
+----

@@ -1,0 +1,163 @@
+Built-in Functions:	print(), input(), len(), range(), type(), int(), str(), float(), list(), dict(), etc.
+Control Flow Statements:	if, elif, else, for, while, break, continue, pass, etc.
+Data Structures	Lists: [], Tuples: (), Sets: {}, Dictionaries: {}, etc.
+File: open(), read(), write(), close(), seek(), tell(), etc.
+Modules and Packages: math, random, datetime, os, json, csv, etc.
+Object-Oriented Programming (OOP):	class, def, self, inheritance, encapsulation, polymorphism, etc.
+Exception Handling:	try, except, finally, raise, assert, etc.
+----
+lokalus kintamasis kai nurodai info vienam kodui,
+jeigu nori kad info pasiektu visi kodai turi prie tai parasyt global
+----
+Packu instaliavimas per terminal:
+pip install requests
+pip install pandas
+----
+Packo instaliavimas is txt failo:
+sukuri txt faila i ji irasai pack pavadinimus ir
+isijungi terminal ivedi komanda:
+pip install -r pavadinimas.txt
+ir suinstaliuoja viska kas surasyta i ta txt
+----
+Graziai isdesto kodo sarasa:
+for raktas, reiksme in zmogus.items():
+    print(f"{raktas}: {reiksme}")
+----
+Paskaiciuoja ar saraso miestai paskutinis miestas turi daugiau nei tris simbolius:
+if len(miestai[3]) > 3
+print(len(vardai))
+----
+Rodo kiek sarase yra vardu:
+print(len(vardai))
+----
+Funkcija irasyti skaiciu:
+skaicius = float(input("Iveskite skaiciu_>"))
+----
+Funkcija irasyti sveikaji skaiciu:
+skaicius = int(input("Iveskite sveikaji skaiciu_>"))
+----
+Funkcija irasyti zodziui:
+zodis = (input("Iveskite zodi_>"))
+----
+Perskaityti faila:
+with open(filename, 'r') as failas
+----
+Sukurti sarasa pvz vardai:
+vardai = ['Tomas', 'Petras']
+print(vardai)
+----
+Indexavimas kad parodytu pirmaji uzrasa siuo atveju apple
+fruits = ["Apple", "Kiwi", "Orange", "Watermelon"]
+print(fruits[0])
+----
+Iterpti jau i esama sarasa
+fruits = ["Apple", "Kiwi", "Orange", "Watermelon"]
+fruits.append('Lemon')
+print(fruits)
+arba
+fruits.insert(2, 'Lemon')
+----
+Panaikina pasirinkta elementa is saraso
+fruits.remove("Orange")
+----
+Rodo kiek sarase yra vardu
+vardai = ["Petras", "Antanas", "Ona", "Gediminas"]
+print(len(vardai))
+----
+Kad isvardintu norima sarasa naudojama for komanda:
+vaisiai = ["Apple", "Banana", "Lemon"]
+for vaisius in vaisiai:
+    print(vaisius)
+----
+For ir raide funkcija, kad rasytu norima zodi po viena raide i apacia:
+tekstas = "Python"
+for raide in tekstas:
+    print(raide)
+----
+For komanda naudojama istraukti lyginius skaicius is duotu:
+skaiciai = [1, 2, 3, 4, 5, 6, 7]
+for skaicius in skaiciai:
+    if skaicius % 2 == 0:
+        print(f"Liginis skaicius {skaicius}")
+----
+Kita for komanda naudojant paskirstyti dvi reiksmes:
+vardai = ["Jonas", "Petras", "Ona"]
+amzius = [30,25,35]
+for vardas, amzius in zip(vardai, amzius):
+    print(f"{vardas} yra {amzius} metu")
+----
+Printint savo norima zona:
+zmogus = {
+    'Vardas': "Jonas",
+    'amzius': 30,
+    'miestas': "Vilnius"
+}
+print(zmogus['Vardas'])
+----
+Isgauti visas kodo raktus:
+raktai = zmogus.keys()
+print(raktai)
+----
+Isgauti visas kodo reiksmes:
+reiksmes = zmogus.values()
+print(reiksmes)
+----
+Isgauti visas kodo poras:
+poros = zmogus.items()
+print(poros)
+----
+Graziai isgautas sarasas:
+zmogus = {
+    'Jonas':{
+    'amzius': 30,
+    'miestas': "Vilnius"
+    },
+    'Antanas':{
+    'amzius': 36,
+    'miestas': 'Kaunas'
+    }
+}
+
+for vardas, info in zmogus.items():
+    amzius = info.get('amzius')
+    miestas = info.get('miestas')
+    print(f"{vardas} yra {amzius} metu amziaus ir gyvena {miestas}")
+----
+Siu komandu paaiskinimai:
+{naujas_raktas: nauja_reiksme for elementas in zodynas if salyga}
+naujas_zodynas = {vardas: (6 <= len(vardas) <= 12) for vardas in vartotojai}
+----
+Komanda kuri padaro komandos trumpini:
+def pasisveikinimas(vardas):
+    text = "Labas, " + vardas + "!"
+    return text
+print(pasisveikinimas("modestas"))
+arba
+def sandauga(skaicius1, skaicius2):
+    rezultatas = skaicius1 * skaicius2
+    return  rezultatas
+daugyba = sandauga(5,5)
+print(daugyba)
+----
+GRAZIAI VISKA SUDEDA I LENTELE run'e:
+import pandas as pd
+df = pd.DataFrame(data)
+print(df)
+----
+SUKENVERTUOJA INFO IS URL I CSV:
+import pandas as pd
+df = pd.DataFrame(data)
+df.to_csv("crypto.csv", index = False)
+----
+Issaugoti diagrama kaip foto:
+plt.savefig('pythonmeteo.png')
+----
+Indeksavimas:
+[::2] kas antra
+----
+Atidaro ivairius heroglifu pasirinkimus:
+windows + .
+----
+Teksta pavercia i skaiciu reiksme:
+df['Patalpu dydis'] = df['Patalpu dydis'].astype(float)
+----
